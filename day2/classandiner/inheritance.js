@@ -32,7 +32,7 @@ class Bike extends Vehicle{
         super(name,model,year);
          // new property for Car class
         this.color=color;
-        console.log("car constructor called")
+        console.log("Bike constructor called")
     }
     // method overriding:Defining same method in child class
       displayNoofwheels(){
