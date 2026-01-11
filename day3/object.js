@@ -39,7 +39,14 @@ let value= Object.values(myobj)
 console.log("value:",value)
 
 // converting to entries [key,value] array
-
+// [[k1,v1],[k2,v2],[k3,v3]]
 let entries=Object.entries(myobj)
 console.log("entries",entries)
 // todo:use forEach for all of the above  and use destructuring for entries for each
+
+
+// entires inside forEach
+
+entries.forEach(([keys,value],index)=>{
+    console.log("Index:",index,"key:",keys,"Value:",value)
+})
