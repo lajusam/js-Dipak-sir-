@@ -82,3 +82,13 @@
 // }
 
 // console.log(findMax([32,33,44,55,66,77]))
+
+// 10)Create a pure function formatDate(year, month, day) that returns a string in "DD/MM/YYYY" format.
+
+// function formatDate(year, month, day) {
+//   const dd = String(day).padStart(2, "0");
+//   const mm = String(month).padStart(2, "0");
+//   const yyyy = String(year);
+
+//   return `${dd}/${mm}/${yyyy}`;
+// }
