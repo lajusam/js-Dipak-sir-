@@ -52,11 +52,34 @@
 
 // 5)Write a function createAdder(x) that returns a new function adding x to its argument.
 
-function createAdder(x){
-    return function(y){
-        return x+y;
-    }
-}
+// function createAdder(x){
+//     return function(y){
+//         return x+y;
+//     }
+// }
 
-const result=createAdder(4);
-console.log(result(5))
+// const result=createAdder(4);
+// console.log(result(5))
+
+// 6) a higher-order function sortBy(arr, key) that sorts array of objects by given key.
+
+function sortBy(arr,key){
+    return[...arr].sort((a,b)=>{
+//         If value of a is smaller than value of b,
+// // put a before b.
+        if(a[key]<b[key]) return -1;
+//         If value of a is bigger than value of b,
+// // put a after b.
+        if(a[key]>b[key])return 1;
+        return 0;
+    })
+}
+const user=[
+  { name: "Ram", age: 20 },
+  { name: "Sita", age: 25 },
+  { name: "Hari", age: 20 },
+  { name: "Gita", age: 25 }
+]
+
+const shorted=sortBy(user,"age");
+console.log(shorted)
