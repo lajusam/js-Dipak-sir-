@@ -63,23 +63,70 @@
 
 // 6) a higher-order function sortBy(arr, key) that sorts array of objects by given key.
 
-function sortBy(arr,key){
-    return[...arr].sort((a,b)=>{
-//         If value of a is smaller than value of b,
-// // put a before b.
-        if(a[key]<b[key]) return -1;
-//         If value of a is bigger than value of b,
-// // put a after b.
-        if(a[key]>b[key])return 1;
-        return 0;
-    })
-}
-const user=[
-  { name: "Ram", age: 20 },
-  { name: "Sita", age: 25 },
-  { name: "Hari", age: 20 },
-  { name: "Gita", age: 25 }
-]
+// function sortBy(arr,key){
+//     return[...arr].sort((a,b)=>{
+// //         If value of a is smaller than value of b,
+// // // put a before b.
+//         if(a[key]<b[key]) return -1;
+// //         If value of a is bigger than value of b,
+// // // put a after b.
+//         if(a[key]>b[key])return 1;
+//         return 0;
+//     })
+// }
+// const user=[
+//   { name: "Ram", age: 20 },
+//   { name: "Sita", age: 25 },
+//   { name: "Hari", age: 20 },
+//   { name: "Gita", age: 25 }
+// ]
 
-const shorted=sortBy(user,"age");
-console.log(shorted)
+// const shorted=sortBy(user,"age");
+// console.log(shorted)
+
+// 7) Write a funciton pipeline(...function)that chains myltiple function(applye on after another).
+
+// function pipeline(f1,f2,f3){
+//             return function(value){
+//                 return f3(f2(f1(value)));
+//             }
+// }
+
+// const multiply= x=> x*4;
+// const divide= x=> x/8;
+// const add= x=> x+9;
+
+// const result= pipeline(multiply,divide,add);
+// console.log("This is the eg of pipleine:",result(5))
+
+// 8)Create a higher-order function withTax(taxRate) that returns a function to add tax to price.
+
+// function withTax(taxrate){
+//     return function(price){
+//         return price +(taxrate*price)
+//     }
+// }
+// const result=withTax(0.25);
+// console.log("The total amount is :",result(500));
+
+// 9)Write a function debounce(fn, delay) that delays function execution (basic version).
+
+
+
+function debounce(fn,delay){
+    let timer;
+    return function(){
+        clearTimeout(timer);
+        timer=setTimeout(fn,delay)
+    }
+}
+
+let late=()=>{
+    console.log("This is 3 sec late");
+}
+
+let debouncing= debounce(late,3000);
+
+debouncing()
+debouncing()
+debouncing()
